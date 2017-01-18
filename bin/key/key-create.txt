@@ -1,0 +1,33 @@
+openssl 生成证书文件
+1.生成私钥文件
+$openssl genrsa -out privatekey.pem 1024
+
+2.通过私钥生成csr证书签名
+$openssl req -new -key privatekey.pem -out certrequest.csr
+
+3.通过私钥和证书签名生成证书文件
+$openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem
+
+
+privatekey.pem: 私钥
+certrequest.csr: CSR证书签名
+certificate.pem: 证书文件
+
+
+以下同样也是来自网上的内容： https://segmentfault.com/a/1190000002630688
+# 生成服务器端的非对称秘钥
+openssl genrsa -des3 -out server.key 1024
+
+# 生成签名请求的CSR文件
+openssl req -new -key server.key -out server.csr
+
+# 自己对证书进行签名，签名的有效期是365天
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+# 去除证书文件的password
+cp server.key server.key.orig
+openssl rsa -in server.key.orig -out server.key
+最终在建立HTTPS链接中使用的文件是
+
+server.crt
+server.key
