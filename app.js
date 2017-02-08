@@ -6,7 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+// 测试页面不刷新处理
+var history = require('./routes/history');
+// API
+var api = require('./routes/api');
+// API Jsonp
+var apiJsonp = require('./routes/apiJsonp');
 
 var app = express();
 
@@ -23,7 +28,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/api', api);
+app.use('/apiJsonp', apiJsonp);
+app.use('/history', history);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

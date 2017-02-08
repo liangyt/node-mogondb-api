@@ -19,19 +19,21 @@ var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Create HTTP/HTTPS server.
  */
+
+
 //=======================http============
 // 这种是使用 http 方式创建的服务
-// var server = http.createServer(app);
+var server = http.createServer(app);
 //=======================http============
 
 //=======================https============
 // 这种是使用 https 方式创建的服务 需要根据 key/key-create.txt 所说的方法选择生成对应的文件。但仅限于自已测试
-var server = https.createServer({
-                key: fs.readFileSync(__dirname + '/key/privatekey.pem'),
-                cert: fs.readFileSync(__dirname + '/key/certificate.pem')
-              }, app);
+// var server = https.createServer({
+//                 key: fs.readFileSync(__dirname + '/key/privatekey.pem'),
+//                 cert: fs.readFileSync(__dirname + '/key/certificate.pem')
+//               }, app);
 //=======================https============
 
 /**
