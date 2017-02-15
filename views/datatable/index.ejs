@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=" " />
+    <meta name="description" content=" " />
+    <meta http-equiv="x-ua-compatible" content="IE=Edge, chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>DataTableTest</title>
+    <link rel="stylesheet" href="/stylesheets/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="/stylesheets/fixedColumns.dataTables.min.css" />
+
+    <script src="/javascripts/vendor/jquery-1.12.4.js"></script>
+    <script src="/javascripts/vendor/jquery.dataTables.min.js"></script>
+    <script src="/javascripts/vendor/dataTables.fixedColumns.min.js"></script>
+    <style>
+        /* Ensure that the demo table scrolls */
+        th, td { white-space: nowrap; }
+        th, td {
+            border: 1px solid red;
+        }
+        div.dataTables_wrapper {
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <script>
+        // 例子来源
+        // https://datatables.net/extensions/fixedcolumns/
+
+        $(document).ready(function() {
+            var t = $('#example').DataTable( {
+                fixedColumns: {
+                    leftColumns: 3 // 固定左侧3列
+                },
+                scrollX: true,
+                "processing": true,
+                "serverSide": true,
+                paging:true, // 是否开启本地分页
+                searching:false, // 是否允许Datatables开启本地搜索
+                "ajax": "http://localhost:3000/datatable/data",
+                "columns": [
+                    { "data": "first_name" },
+                    { "data": "last_name" },
+                    { "data": "position" },
+                    { "data": "position" },
+                    { "data": "position" },
+                    { "data": "position" },
+                    { "data": "position" },
+                    { "data": "position" },
+                    { "data": "position" },
+                    { "data": "office" },
+                    { "data": "start_date" },
+                    { "data": "salary" }
+                ]
+            } );
+
+            t.on( 'order.dt search.dt', function () {
+                t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                    cell.innerHTML = i+1;
+                } );
+            } ).draw();
+        } );
+    </script>
+</head>
+<body>
+    <table id="example" class="display stripe row-border order-column" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th colspan="2">Last name</th>
+                <th colspan="6">Position</th>
+                <th colspan="2">Office</th>
+                <th>Salary</th>
+            </tr>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Position</th>
+                <th>Position</th>
+                <th>Position</th>
+                <th>Position</th>
+                <th>Position</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>

@@ -12,6 +12,8 @@ var history = require('./routes/history');
 var api = require('./routes/api');
 // API Jsonp
 var apiJsonp = require('./routes/apiJsonp');
+// 测试DataTable
+var dataTable = require('./routes/dataTable');
 
 var app = express();
 
@@ -31,6 +33,7 @@ app.use('/', routes);
 app.use('/api', api);
 app.use('/apiJsonp', apiJsonp);
 app.use('/history', history);
+app.use('/dataTable', dataTable);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
