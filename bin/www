@@ -28,6 +28,14 @@ app.set('port', port);
 var server = http.createServer(app);
 //=======================http============
 
+// webSocket 使用ws轮子尝试了下webSocket,实现接收和发送功能
+// https://github.com/websockets/ws
+const webSocket = require('ws');
+const wsService = require('../service/ws/index');
+const wss = new webSocket.Server({server});
+wss.on('connection', wsService.connection)
+wsService.setWss(wss)
+
 //=======================https============
 // 这种是使用 https 方式创建的服务 需要根据 key/key-create.txt 所说的方法选择生成对应的文件。但仅限于自已测试
 // var server = https.createServer({

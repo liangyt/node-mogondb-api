@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <meta name="description" content=" " />
+    <meta http-equiv="x-ua-compatible" content="IE=Edge, chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>Chat</title>
+    <style>
+        .self {
+            text-align: right;
+        }
+        .online {
+            text-align: center;
+            color: #ccc;
+        }
+        .othen-content {
+            background-color: #ccc;
+            border-radius: 5%;
+            padding: 10px;
+            line-height: 36px;
+        }
+        .other {
+            margin: 30px 0 30px 5px;
+        }
+        .self {
+            margin: 30px 0 30px 5px;
+        }
+        .self-content {
+            background-color: red;
+            border-radius: 5%;
+            padding: 10px;
+            line-height: 36px;
+        }
+        .footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            padding: 10px;
+        }
+
+        .send-content {
+            width: 70%;
+            height: 30px;
+            border-radius: 5%;
+            border: 1px solid #ccc;
+        }
+        .send-button {
+            font-size: 18px;
+            width: 60px;
+            height: 30px;
+        }
+        .my-name-bg {
+            position: fixed;
+            top: 0;
+            z-index: 99;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        .my-name {
+            position: relative;
+            background-color: white;
+            top: 50%;
+            margin: 0 auto;
+            width: 200px;
+            height: 80px;
+            text-align: center;
+            padding-top: 10px;
+        }
+        .my-name-tip {
+            height: 30px;
+        }
+        #my-name {
+            border: 1px solid #ccc;
+        }
+        .message-tip {
+            text-align: center;
+            font-size: 10px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="online">
+            当前在线人数 <span id="onlinecount" class="online-count"></span>
+        </div>
+        <div class="content">
+            <div class="other">
+                <span>路人:</span><span class="othen-content">说得不错</span>
+            </div>
+            <div class="other">
+                <span>路人:</span><span class="othen-content">说得不错</span>
+            </div>
+            <div class="self">
+                <span class="self-content">你说得不错你说得不错你说得不错你说得不错</span><span>自已</span>
+            </div>
+            <div class="message-tip">
+                <span>你说得不错你说得不错你说得不错你说得不错</span>
+            </div>
+        </div>
+        <div class="footer">
+            <span>
+                <input type="text" id="content" class="send-content">
+            </span>
+            <span>
+                <input type="button" value="发送" class="send-button" id="send">
+            </span>
+        </div>
+    </div>
+    <!--<div class="my-name-bg">
+        <div class="my-name">
+            <div class="my-name-tip">
+            输入你的名称按回车：
+            </div>
+            <div>
+                <input type="text" id="my-name">
+            </div>
+        </div>
+    </div>-->
+</body>
+</html>

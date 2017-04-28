@@ -14,6 +14,11 @@ var api = require('./routes/api');
 var apiJsonp = require('./routes/apiJsonp');
 // 测试DataTable
 var dataTable = require('./routes/dataTable');
+// webSocket 测试页面
+var webSocket = require('./routes/websocket');
+
+// 测试页面
+var demo = require('./routes/demo');
 
 var app = express();
 
@@ -34,6 +39,8 @@ app.use('/api', api);
 app.use('/apiJsonp', apiJsonp);
 app.use('/history', history);
 app.use('/dataTable', dataTable);
+app.use('/ws', webSocket);
+app.use('/demo', demo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content=" " />
+    <meta name="description" content=" " />
+    <meta http-equiv="x-ua-compatible" content="IE=Edge, chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>jquery deferred</title>
+    <script src="/javascripts/vendor/jquery-1.12.4.js"></script>
+    <script>
+        var ctx = window.location.origin;
+
+        $.getJSON(ctx + '/api/list').then(function(data) {
+            console.log(data);
+        })
+        .done(function(data) {
+            console.log(data);
+        })
+        .done(function() {
+            console.log('同样会被调用');
+        })
+
+
+    </script>
+</head>
+<body>
+关于这个讨论，简单的写了一遍总结，<a href="https://liangyt.github.io/2017/04/06/回调的进阶/">参考这里</a>
+</body>
+</html>

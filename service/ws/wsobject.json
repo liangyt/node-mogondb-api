@@ -1,0 +1,429 @@
+// connection 方法的参数 ws
+{}
+/*
+{
+  domain: null,
+  _events: { close: [Function
+        ]
+    },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  readyState: 1,
+  bytesReceived: 0,
+  extensions: { 'permessage-deflate':
+      PerMessageDeflate{
+        _options: {},
+        _isServer: true,
+        _inflate: null,
+        _deflate: null,
+        params: {},
+        _maxPayload: 104857600,
+        threshold: 1024
+        }
+    },
+  protocol: '',
+  _binaryType: 'nodebuffer',
+  _finalize: {
+        [Function: bound finalize
+        ] __ultron: 1
+    },
+  _finalizeCalled: false,
+  _closeMessage: null,
+  _closeTimer: null,
+  _closeCode: null,
+  _receiver:
+   Receiver{
+       binaryType: 'nodebuffer',
+     extensions: { 'permessage-deflate': [Object
+            ]
+        },
+     maxPayload: 104857600,
+     bufferedBytes: 0,
+     buffers: [],
+     compressed: false,
+     payloadLength: 0,
+     fragmented: 0,
+     masked: false,
+     fin: false,
+     mask: null,
+     opcode: 0,
+     totalPayloadLength: 0,
+     messageLength: 0,
+     fragments: [],
+     cleanupCallback: null,
+     hadError: false,
+     dead: false,
+     loop: false,
+     onmessage: [Function
+        ],
+     onclose: [Function
+        ],
+     onerror: [Function
+        ],
+     onping: [Function
+        ],
+     onpong: [Function
+        ],
+     state: 0
+    },
+  _sender:
+   Sender{
+     perMessageDeflate:
+      PerMessageDeflate{
+        _options: {},
+        _isServer: true,
+        _inflate: null,
+        _deflate: null,
+        params: {},
+        _maxPayload: 104857600,
+        threshold: 1024
+        },
+     _socket:
+      Socket{
+        connecting: false,
+        _hadError: false,
+        _handle: [Object
+            ],
+        _parent: null,
+        _host: null,
+        _readableState: [Object
+            ],
+        readable: true,
+        domain: null,
+        _events: [Object
+            ],
+        _eventsCount: 8,
+        _maxListeners: undefined,
+        _writableState: [Object
+            ],
+        writable: true,
+        allowHalfOpen: true,
+        destroyed: false,
+        _bytesDispatched: 175,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: [Object
+            ],
+        _server: [Object
+            ],
+        _idleTimeout: -1,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleStart: 8986,
+        parser: null,
+        on: [Function
+            ],
+        _paused: false,
+        read: [Function
+            ],
+        _consuming: true
+        },
+     firstFragment: true,
+     compress: false,
+     bufferedBytes: 0,
+     deflating: false,
+     queue: [],
+     onerror: [Function
+        ]
+    },
+  _socket:
+   Socket{
+     connecting: false,
+     _hadError: false,
+     _handle:
+      TCP{
+        bytesRead: 883,
+        _externalStream: {},
+        fd: 15,
+        reading: true,
+        owner: [Circular
+            ],
+        onread: [Function: onread
+            ],
+        onconnection: null,
+        writeQueueSize: 0,
+        _consumed: true
+        },
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState{
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: [Object
+            ],
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: true,
+        defaultEncoding: 'utf8',
+        ranOut: false,
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null
+        },
+     readable: true,
+     domain: null,
+     _events: { end: [Object
+            ],
+        finish: [Function: onSocketFinish
+            ],
+        _socketEnd: [Function: onSocketEnd
+            ],
+        drain: [Object
+            ],
+        timeout: [Function: bound socketOnTimeout
+            ],
+        error: [Object
+            ],
+        close: [Object
+            ],
+        data: [Object
+            ]
+        },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState{
+        objectMode: false,
+        highWaterMark: 16384,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: false,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite
+            ],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 1,
+        prefinished: false,
+        errorEmitted: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object
+            ]
+        },
+     writable: true,
+     allowHalfOpen: true,
+     destroyed: false,
+     _bytesDispatched: 175,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server{
+        domain: null,
+        _events: [Object
+            ],
+        _eventsCount: 5,
+        _maxListeners: undefined,
+        _connections: 2,
+        _handle: [Object
+            ],
+        _usingSlaves: false,
+        _slaves: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        _connectionKey: '6: : : : 3000'
+        },
+     _server:
+      Server{
+        domain: null,
+        _events: [Object
+            ],
+        _eventsCount: 5,
+        _maxListeners: undefined,
+        _connections: 2,
+        _handle: [Object
+            ],
+        _usingSlaves: false,
+        _slaves: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        _pendingResponseData: 0,
+        maxHeadersCount: null,
+        _connectionKey: '6: : : : 3000'
+        },
+     _idleTimeout: -1,
+     _idleNext: null,
+     _idlePrev: null,
+     _idleStart: 8986,
+     parser: null,
+     on: [Function
+        ],
+     _paused: false,
+     read: [Function
+        ],
+     _consuming: true
+    },
+  _ultron:
+   Ultron{
+     id: 1,
+     ee:
+      Socket{
+        connecting: false,
+        _hadError: false,
+        _handle: [Object
+            ],
+        _host: null,
+        _readableState: [Object
+            ],
+        readable: true,
+        domain: null,
+        _events: [Object
+            ],
+        _eventsCount: 8,
+        _maxListeners: undefined,
+        _writableState: [Object
+            ],
+        writable: true,
+        allowHalfOpen: true,
+        destroyed: false,
+        _bytesDispatched: 175,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: [Object
+            ],
+        _server: [Object
+            ],
+        _idleTimeout: -1,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleStart: 3405,
+        parser: null,
+        on: [Function
+            ],
+        _paused: false,
+        read: [Function
+            ],
+        _consuming: true
+        },
+     httpVersionMajor: 1,
+     httpVersionMinor: 1,
+     httpVersion: '1.1',
+     complete: true,
+     headers: { host: 'localhost: 3000',
+        connection: 'Upgrade',
+        pragma: 'no-cache',
+        'cache-control': 'no-cache',
+        upgrade: 'websocket',
+        origin: 'http: //localhost:3000',
+        'sec-websocket-version': '13',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+        'accept-encoding': 'gzip, deflate, sdch, br',
+        'accept-language': 'zh-CN,zh;q=0.8,en;q=0.6',
+        cookie: 'JSESSIONID=1on1ak10155nimkggvygnfasq; UM_distinctid=15b7eadd1130-0f3ccbc3fb2917-1d3b6851-13c680-15b7eadd1183; CNZZDATA1253889068=186551434-1492478358-%7C1492478358; io=Nre779sKPXcQhfZnAAAQ; Site_Cooke_Key=93F92A72BEC58C8134C67112B007A4FE512DB6761CFB7D0973B1568F404B1669A04E7688A0D612C90BB6CEC39B4EA2E7; JSESSIONID
+_COOKIE=e43fd10c-27a2-4205-ba57-46c01afec171',
+        'sec-websocket-key': 'YB1nmlSq53tlHMqn8fohyQ==',
+        'sec-websocket-extensions': 'permessage-deflate; client_max_window_bits'
+        },
+     rawHeaders: [ 'Host',
+        'localhost: 3000',
+        'Connection',
+        'Upgrade',
+        'Pragma',
+        'no-cache',
+        'Cache-Control',
+        'no-cache',
+        'Upgrade',
+        'websocket',
+        'Origin',
+        'http: //localhost:3000',
+        'Sec-WebSocket-Version',
+        '13',
+        'User-Agent',
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+        'Accept-Encoding',
+        'gzip, deflate, sdch, br',
+        'Accept-Language',
+        'zh-CN,zh;q=0.8,en;q=0.6',
+        'Cookie',
+        'JSESSIONID=1on1ak10155nimkggvygnfasq; UM_distinctid=15b7eadd1130-0f3ccbc3fb2917-1d3b6851-13c680-15b7eadd1183; CNZZDATA1253889068=186551434-1492478358-%7C1492478358; io=Nre779sKPXcQhfZnAAAQ; Site_Cooke_Key=93F92A72BEC58C8134C67112B007A4FE512DB6761CFB7D0973B1568F404B1669A04E7688A0D612C90BB6CEC39B4EA2E7; JSESSIONID_COOKIE=
+e43fd10c-27a2-4205-ba57-46c01afec171',
+        'Sec-WebSocket-Key',
+        'YB1nmlSq53tlHMqn8fohyQ==',
+        'Sec-WebSocket-Extensions',
+        'permessage-deflate; client_max_window_bits'
+        ],
+     trailers: {},
+     rawTrailers: [],
+     upgrade: true,
+     url: '/',
+     method: 'GET',
+     statusCode: null,
+     statusMessage: null,
+     client:
+      Socket{
+        connecting: false,
+        _hadError: false,
+        _handle: [Object
+            ],
+        _parent: null,
+        _host: null,
+        _readableState: [Object
+            ],
+        readable: true,
+        domain: null,
+        _events: [Object
+            ],
+        _eventsCount: 8,
+        _maxListeners: undefined,
+        _writableState: [Object
+            ],
+        writable: true,
+        allowHalfOpen: true,
+        destroyed: false,
+        _bytesDispatched: 175,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: [Object
+            ],
+        _server: [Object
+            ],
+        _idleTimeout: -1,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleStart: 3405,
+        parser: null,
+        on: [Function
+            ],
+        _paused: false,
+        read: [Function
+            ],
+        _consuming: true
+        },
+     _consuming: false,
+     _dumped: false,
+     parser: null
+    },
+     _isServer: true
+}
+*/
